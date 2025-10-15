@@ -143,6 +143,8 @@ docker-compose up -d
 # 4. Aguarde o MySQL inicializar (10-15 segundos)
 sleep 15
 
+docker-compose exec app composer install
+
 # 5. Gere a chave da aplicação
 docker-compose exec app php artisan key:generate
 
