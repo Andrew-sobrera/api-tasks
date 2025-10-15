@@ -35,7 +35,6 @@ Esta API foi desenvolvida para gerenciar tarefas (tasks) de forma eficiente e es
 
 - Criar novas tarefas
 - Listar todas as tarefas
-- Buscar tarefa específica por ID
 - Atualizar tarefas existentes
 - Deletar tarefas
 - Validação automática de dados
@@ -128,23 +127,6 @@ Antes de começar, certifique-se de ter instalado:
 ---
 
 ## ⚙️ Instalação
-
-### Método 1: Setup Automático 🚀
-
-```bash
-# 1. Clone o repositório
-git clone <url-do-repositorio>
-cd api
-
-# 2. Execute o script de setup
-- chmod +x docker-setup.sh
-- ./docker-setup.sh
-```
-
-Pronto! A API estará disponível em `http://localhost:8000` 🎉
-
-
-### Método 2: Manual
 
 ```bash
 # 1. Clone o repositório
@@ -420,7 +402,7 @@ curl http://localhost:8000/api/tasks
 # Criar tarefa
 curl -X POST http://localhost:8000/api/tasks \
   -H "Content-Type: application/json" \
-  -d '{"title":"Estudar Laravel","description":"Capítulo 5","status":0}'
+  -d '{"title":"Estudar Laravel","description":"Capítulo 5"}'
 
 # Buscar tarefa
 curl http://localhost:8000/api/tasks/1
@@ -515,25 +497,7 @@ api/
 ### Executar Testes
 
 ```bash
-# Com Make
-make test
-
-# Com Docker Compose
 docker-compose exec app php artisan test
-
-# Com PHPUnit
-docker-compose exec app ./vendor/bin/phpunit
-```
-
-### Criar Testes
-
-```bash
-# Test de Feature
-docker-compose exec app php artisan make:test TaskTest
-
-# Test Unitário
-docker-compose exec app php artisan make:test TaskTest --unit
-```
 
 ---
 
